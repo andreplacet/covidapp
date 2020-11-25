@@ -1,0 +1,129 @@
+<Gerenciador>:
+    MenuPrincipal:
+        name:'menu'
+    Confirmacao:
+        name:'confirmacao'
+    Cadastro:
+        name:'cadastro'
+    MapaSuzano:
+        name:'mapa'
+<MapaSuzano>
+    BoxLayout:
+        orientation:'vertical'
+        MapView:
+            id:'map'
+            lat: float(-23.541)
+            lon: float(-46.3106)
+            zoom: 12
+        Button:
+            text: 'Voltar'
+            font_size: 26
+            size_hint_y:None
+            size_hint_x:None
+            width: 500
+            on_release: root.parent.current = 'menu'
+<MenuPrincipal>
+    BoxLayout:
+        orientation:'vertical'
+        Label:
+            id:label
+            text: 'Bem vindo a nossa aplicação!!'
+            font_size:30
+        BoxLayout:
+            Button:
+                text: 'Visualizar Dados'
+                font_size: 26
+                size_hint_y:None
+                size_hint_x:None
+                height:105
+                width:250
+                on_release: root.parent.current = 'mapa'
+            Button:
+                text: 'Cadastrar'
+                font_size: 26
+                size_hint_y:None
+                size_hint_x:None
+                height:105
+                width:250
+                on_release: root.parent.current = 'confirmacao'
+<Confirmacao>
+    BoxLayout:
+        orientation:'vertical'
+        Label:
+            id:label
+            text: 'Confirma o cadastro?'
+            font_size:30
+        BoxLayout:
+            Button:
+                text: 'Voltar'
+                font_size: 26
+                on_release: root.parent.current = 'menu'
+                size_hint_y:None
+                size_hint_x:None
+                height:105
+                width:250
+            Button:
+                text: 'Cadastrar'
+                font_size: 26
+                size_hint_y:None
+                size_hint_x:None
+                height:105
+                width:250
+                on_release: root.parent.current = 'cadastro'
+
+<Cadastro>:
+    BoxLayout:
+        orientation:'vertical'
+        BoxLayout:
+            orientation:'vertical'
+            Label:
+                id:label
+                text: 'Cadastro'
+                font_size:30
+                size_hint_y:None
+                height: 100
+            Label:
+                text:'Nome'
+                font_size:26
+                size_hint_x:None
+                width:80
+            TextInput:
+                id:'nome'
+                size_hint_y:None
+                height:self.minimum_height
+        BoxLayout:
+            orientation:'vertical'
+            Label:
+                text:'E-mail'
+                font_size:26
+                size_hint_x:None
+                width:80
+            TextInput:
+                id:'email'
+                size_hint_y:None
+                height:self.minimum_height
+        BoxLayout:
+            orientation:'vertical'
+            Label:
+                text:'Endereço'
+                font_size:26
+                size_hint_x:None
+                width:100
+            TextInput:
+                id:'email'
+                size_hint_y:None
+                height:self.minimum_height
+        BoxLayout:
+            Button:
+                text:'voltar'
+                size_hint_y:None
+                size_hint_x:None
+                height:105
+                width:250
+                on_release: root.parent.current = 'menu'
+            Button:
+                text:'cadastrar'
+                size_hint_y:None
+                size_hint_x:None
+                height:105
+                width:250
